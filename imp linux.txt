@@ -1,0 +1,241 @@
+The du (disk usage) 
+du -sh .     ----current loaction file size
+du -Sh | sort -rh | head -5        --------top 5 files 
+
+grep -r <textname>    ------------to find anywhere any file 
+iftop -i eth0  ----- notwork speed
+find / -name unzip
+ find / -type d -name POC-EMR
+ find / -type d -name .m2
+ find / -type d -name vidmedPrescription.jrxml
+ 
+ find /opt/vmed-pro-prod/file-service/sharedfiles/BENEFICIARY -type d -name 5488_1688728460014_3965_OpBilling.pdf
+ 
+ find / -type d -name .well-known
+ find /var -type d -name vmed-pro-core-qa
+ 
+ 
+root@jhsdcshiasrv01:/etc#
+
+ 
+ get the file:
+find / -type f -name BeautyBooking.Common.runtimeconfig.json
+get the directory:
+find / -type d -name test
+
+find /root/dbbackup -type f -mtime +5 | xargs rm                      ---remove older than 10days in /home/my_folder
+
+ find /var/dbbackup -type f -mtime +10 | xargs rm 
+ 
+   
+ find /opt/openvidu/recording -type d -name find head -rf recording_UttarakhandTelemedicine_50_doc_273_pat_408_20220621_1655816786988
+   
+ find /opt/openvidu/recording -type d -name find head -rf UttarakhandTelemedicine_50_doc_287_pat_715_20220803_1659524561271
+
+
+who -H   -----------to check who is online --how many users onlinee
+lsb_release -a 			---ubuntu version
+cat /etc/os-release  ----ubuntu version
+ifconfig			--- to know the ip
+docker --version
+hostname -I			---ip and (docker ip)
+nginx -v			---nginx version
+ufw status 			---firewall status 
+ufw status verbose		---firewall status
+apache2 -v 
+fuser -k 80/tcp
+ufw allow 8081
+ufw allow 5432
+free -m 			---free memory
+cp -rf index.html /var/lib/docker/volumes/Nginx-Gateway/_data/conf.d
+lsof         			----list of files
+netstat -tulpn 			----listining ports
+if -top          -----------
+htop
+
+free -tm
+
+swapoff -a && swapon -a
+
+
+free -m			---memory
+free -h		   	---human
+free -g			---giga
+free -t			---total
+df -h 			---all details
+nproc   ---gives cpu size
+
+
+locate app | grep /app$      -------find using grep
+server utilization in vidmed qa
+htop
+locate app | grep /app$      -------find using grep
+docker stats  ----to know which service isusing high memory
+ps -aux | grep docker
+
+# top 5 directories under home
+# du -a /opt | sort -n -r | head -n 5
+
+# Find Largest Directories in Linux
+If you want to display the biggest directories in the current working directory, run:
+
+# du -a | sort -n -r | head -n 5
+
+#want to display the largest files in KB, MB, or GB.
+
+# du -hs * | sort -rh | head -30
+du -Sh | sort -rh | head -5          ---top 5 big files
+
+#To display the largest folders/files including the sub-directories, run:
+
+# du -Sh | sort -rh | head -5
+
+#Find Out Top File Sizes Only
+If you want to display the biggest file sizes only, then run the following command:
+
+# find -type f -exec du -Sh {} + | sort -rh | head -n 5
+
+#To find the largest files in a particular location, just include the path beside the find command:
+
+# find /home/tecmint/Downloads/ -type f -exec du -Sh {} + | sort -rh | head -n 5
+OR
+# find /home/vinay -type f -printf "%s %p\n" | sort -rn | head -n 5
+
+
+
+
+------ shalsum /dev/zero &  -------to run backgroung loop files upto 90 of cup utilization 
+
+------ ps -a
+
+------ kill -9 processidg
+
+:%s/command/land/g -vi editor to change the word in the entire editor
+
+find path/ -type f | xargs sed -i 's/old name/new name/g'
+
+find ./ -type f | xargs sed -i 's/root/dbbackup/root/.backup/g'
+
+find ./ -type f | xargs sed -i 's/dbbackup/root/g'
+
+find ./ -type f | xargs sed -i 's/103.7.183.48/10.10.76.48/g'
+
+find ./ -type f | xargs sed -i 's/103.7.183.48/10.10.76.48/g'
+
+
+find ./ -type f | xargs sed -i 's/103.7.183.48/10.10.76.48/g'
+
+:%s/192.168.21.70/192.168.20.129/g
+
+%s/https://doctors.uktelemedicine.in/https://insuranceopd.vmedtm.com/
+
+chown -R administrator:administrator vidmed-dashboardapp
+
+chown -R administrator:administrator sahiya-dashboard
+
+chown -R root:root /var/www/vrutta
+
+
+timedatectl list-timezones | grep -i Asia  
+sudo unlink /etc/localtime                                             
+sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime      
+
+sudo timedatectl set-timezone Asia/Calcutta
+
+sudo timedatectl set-time "2023-09-14 14:35:00"
+
+
+timedatectl       
+
+scp -P 22  202.21.32.206:/usr/share/jitsi-meet/interface_config.js .
+rsync -avzh -e 'ssh -p 8288' --progress administrator@202.140.139.217:/opt/openvidu/recordings/* /opt/opt/hub1recordings/
+
+rsync -avzh -e 'ssh -p 8288' --progress root@103.7.183.46:/root/sharedfiles282023old.tar.gz /root/
+
+rsync -avzh -e 'ssh -p 8288' --progress administrator@202.140.139.218:/opt/openvidu/recordings/* /opt/opt/hub2recordings/
+
+rsync -avzh -e --progress /opt/openvidu/recordings/* /opt/
+
+ netstat -tulpn | grep :8045
+
+find /opt/openvidu/recordings -type f -ls |grep 'Dec 13' | wc -l --------to list how many recording files are there
+
+
+find /opt/vmed-pro-prod/ -type f | xargs sed -i 's/192.168.21.62:5432/192.168.21.63:5432/g'
+
+find /opt/uk-telemedicine/ -type f | xargs sed -i 's/192.168.21.5/192.168.20.129/g'
+
+find path/ -type f | xargs sed -i 's/old name/new name/g'
+
+tail -n 10     ----insted of cat we use tail to show all files
+
+ls | wc -l  ----------------list files count
+
+sshpass -p "#DxrK9U486eL" scp -P 8288 test123 vinay@45.118.181.160:/home/vinay
+
+shutdown now
+
+lscpu | grep MHz ----clock speed
+
+find /opt/uktm-preprod/ -type f | xargs sed -i 's/telemedicine-uk-training.vmedtm.com/siddhagirisanjeevani.vmedtm.co
+
+find ./ -type f | xargs sed -i 's/Japitdev135#$/Japitqa135#$/g'
+
+sudo chown root:docker /var/run/docker.sock
+
+find /opt/uk-telemedicine/ -type f | xargs sed -i 's/192.168.21.5/192.168.20.129/g'
+
+find /opt/japit-qa  -type f -name 'application.yml' -exec sed -i 's/japitqa.dhanushinfotech.com/japitqanew.dhanushinfotech.com/g' {} \;
+
+find /opt/japit-qa  -type f -name 'application.properties' -exec sed -i 's/Japitdev135#$/Japitqa135#$/g' {} \;
+
+
+find /opt/japitprodapps/japit-prod -type f -name 'application.properties' -exec sed -i 's/10.92.197.241/10.92.191.97/g' {} \;
+
+
+find /opt/japitprodapps/japit-prod -type f -name 'application.properties' -exec sed -i 's/Japitqa135#$/JH^!&135#$/g' {} \;
+
+to get public ip:-
+
+#wget -qO- ifconfig.co      --to get public ip----------
+
+ echo VidMed_* | wc
+ 
+ docker save  imagename(not container name) > pgadmin.tar    --------take docker image file-----
+ 
+ docker load -i /tarfile/locatopn/tarfile.tar    --- to save the image. the image name cant be apper..only image id---try to load image with name.
+ 
+ 
+ find /home/sahiya/japit-prod -type f -name 'application.properties' -exec sed -i 's/192.168.20.89/10.92.197.241 {} \;
+ 
+ find /opt/uk-telemedicine-prod -type f -name 'application.properties' -exec sed -i 's/10.67.169.124/10.67.171.90/g' {} \;
+ 
+ 
+ find /opt/uk-telemedicine-prod -type f -name 'application.properties' -exec sed -i 's/ukdb135#$/V52db6C+GTD3/g' {} \;
+ ukdb135#$
+ 
+ find /opt/uk-telemedicine-prod -type f -name 'application.properties' -exec sed -i 's/V52db6C+GTD3/ukdb135#$/g' {} \;
+ 
+ rsync -avrzP -e --progress /opt/japit-dev/sahiya-de/opt/* /opt/japit_uploads/contents
+ rsync -avrzP /opt/japit-dev/sahiya-de/opt/* /opt/japit_uploads/contents
+ 
+ 
+ find /opt/japitprodapps/japit-prod -type f -name 'application.properties' -exec sed -i 's/192.168.20.89/10.92.191.97/g' {} \;
+ 
+ 
+ find /opt/japitprodapps/japit-prod -type f -name 'application.properties' -exec sed -i 's/Japitqa135#$/QMwuFDInBQ3zR3$g/g' {} \;
+ 
+ find /opt/japitprodapps/japit-prod -type f -name 'application.yml' -exec sed -i 's/Japitqa135#$/QMwuFDInBQ3zR3$g/g' {} \;
+ 
+ find /opt/japit-qa -type f -name 'application.yml' -exec sed -i 's/192.168.20.89/10.92.182.35/g' {} \;
+ 
+ 
+ netstat -anp | grep :443 | grep ESTABLISHED | wc -l                 ----------number of cuncurrent connections on 443 port
+ 
+ netstat -ntu |grep -E ':80|:443'|wc -l                  ----------number of cuncurrent connections on 443 and 80 port
+ 
+ netstat -anp | grep :443 | grep ESTABLISHED | wc -l             ---------------cuncurent connections on server-----
+
+ufw block specific IP address
+sudo ufw deny from {ip-address-here} to any
+sudo ufw deny from 192.168.1.5 to any
